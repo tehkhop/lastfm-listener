@@ -77,7 +77,7 @@ const options = {
 
 let lastFM = new LastFM(options);
 
-lastFM.on('song', (song) =>) {
+lastFM.on('song', (song) => {
     console.log("Details about new song! ", song);
 });
 
