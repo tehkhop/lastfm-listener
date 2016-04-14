@@ -1,6 +1,6 @@
 {
   "name": "lastfm-listener",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Triggers events when a new song is played on last.fm.",
   "main": "index.js",
   "repository": {
