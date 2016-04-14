@@ -21,14 +21,14 @@ lastfm-listener extends EventEmitter and has all of it's methods.
 
 ### Constructor
 
-```
+```js
 const LastFM = require('lastfm-listener');
 const options = {
-	api_key: 'http://www.last.fm/api/',
-	username: 'my lastfm username',
-	rate: 5,
-	alert_intial: true,
-	only_if_playing: true
+    api_key: 'http://www.last.fm/api/',
+    username: 'my lastfm username',
+    rate: 5,
+    alert_intial: true,
+    only_if_playing: true
 };
 
 let lastFM = new LastFM(options);
@@ -36,11 +36,11 @@ let lastFM = new LastFM(options);
 
 ### Constructor Options
 
- - `api_key` - Your API key. You can get one here http://www.last.fm/api/.
- - `username` - The username you want to listen for songs at.
- - `rate` - How often in seconds you want to check the API.
- - `alert_intial` - When the first song is loaded, do you want it to fire the event?
- - `only_if_playing` - Require song to have "currently playing" tag.
+ - `api_key` - Your API key. You can get one here http://www.last.fm/api/. `Required`
+ - `username` - The username you want to listen for songs at. `Required`
+ - `rate` - How often in seconds you want to check the API. `Optional, defaults to 5 seconds.`
+ - `alert_intial` - When the first song is loaded, do you want it to fire the event? `Optional, defaults to true.`
+ - `only_if_playing` - Require song to have "currently playing" tag. `Optional, defaults to false.`
 
 ### Methods
 
@@ -50,16 +50,29 @@ let lastFM = new LastFM(options);
  - `stop` - Stop checking the API.
  - All EventEmitter methods .on, .emit, etc.
 
- ### Example Code
+### Events
 
- ```
+The only availble event is 'song'. Bind it like this:
+
+```js
+lastFM.on('song', function(song) {
+	
+	console.log(song.name); // "Never Gonna Give You Up"
+	console.log(song.artist); // "Rick Astley"
+
+});
+```
+
+### Example Code
+
+```js
 const LastFM = require('lastfm-listener');
 const options = {
-	api_key: 'http://www.last.fm/api/',
-	username: 'my lastfm username',
-	rate: 5,
-	alert_intial: true,
-	only_if_playing: true
+    api_key: 'http://www.last.fm/api/',
+    username: 'my lastfm username',
+    rate: 5,
+    alert_intial: true,
+    only_if_playing: true
 };
 
 let lastFM = new LastFM(options);
@@ -69,8 +82,7 @@ lastFM.on('song', (song) =>) {
 });
 
 lastFM.start();
-
- ```
+```
 
 ## License
 

@@ -13,7 +13,7 @@
     "scrobbler"
   ],
   "author": "Lachlan Davidson - @tehkhop",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tehkhop/lastfm-listener/issues"
   },
