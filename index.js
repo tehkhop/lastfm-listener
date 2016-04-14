@@ -84,6 +84,12 @@ class LastFMListener extends EventEmitter
 	
 	checkSong(callback) {
 		
+		if(typeof callback != 'function') {
+			callback = function () {
+				// lol k
+			};
+		}
+		
 		this.getLatestSong((song) => {
 
 			// Self-calling anonymous functions 👍
